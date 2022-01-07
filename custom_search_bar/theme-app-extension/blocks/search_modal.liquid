@@ -1,0 +1,186 @@
+<div class="searchmodal">
+  <div class="inblock">
+    {% render "textinput1"%}
+  </div>
+  <div class="inblock">
+      <div class="searcher">{% render "searchbox" %}</div>
+  </div>
+</div>
+
+
+{%style%}
+  .inblock{
+    display: inline-block;
+  }
+  .searchmodal{
+    background-color: {{block.settings.color2}};
+    background: linear-gradient({{block.settings.gradientangle}}deg, {{block.settings.color2}} 0%, {{block.settings.color3}} {{block.settings.gradientpercent}}%, {{block.settings.color4}} 100%);
+    display: flex;
+    align-items: center;
+    border-radius: {{block.settings.radiuscurve}}rem;
+    box-shadow: {{block.settings.offsetx}}rem {{block.settings.offsety}}rem {{block.settings.blur}}rem {{block.settings.spread}}rem rgba(0, 0, 0, 0.2);
+  }
+{%endstyle%}
+
+{% schema %}
+{
+    "name": "Search Block",
+    "target": "section", 
+    "settings": [
+    {"type": "font", "id": "font", "label": "Font"},
+    {
+      "type": "range",
+      "id": "fontsize",
+      "min": 0,
+      "max": 20,
+      "step": 0.2,
+      "unit": "rem",
+      "label": "Font size",
+      "default": 1.4
+    },
+    {"type": "text", "id": "textinput1", "label": "Text", "default": "I want:"},
+    {"type": "color", "id": "color2", "label": "Gradient Color 1"},
+    {"type": "color", "id": "color3", "label": "Gradient Color 2"},
+    {"type": "color", "id": "color4", "label": "Gradient Color 3"},
+    {
+      "type": "range",
+      "id": "gradientpercent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Gradient Percent",
+      "default": 35
+    },
+    {
+      "type": "number",
+      "id": "gradientangle",
+      "label": "Gradient Angle (1-360°)",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "radiuscurve",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Outer Border Curve (0=square, 10=round)",
+      "default": 0.5
+    },
+    {"type": "color", "id": "color1", "label": "Text Color"},
+    {"type": "color", "id": "searchcolor", "label": "Search Text Color"},
+    {"type": "color", "id": "bordercolor", "label": "Search Line Color"},
+      {
+        "type": "range",
+        "id": "paddingtop",
+        "min": 0,
+        "max": 50,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Padding Top",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "paddingleft",
+        "min": 0,
+        "max": 50,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Padding Left",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "paddingright",
+        "min": 0,
+        "max": 50,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Padding Right",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "paddingbottom",
+        "min": 0,
+        "max": 50,
+        "step": 0.5,
+        "unit": "rem",
+        "label": "Padding Bottom",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "spacing",
+        "min": 0,
+        "max": 10,
+        "step": 0.2,
+        "unit": "rem",
+        "label": "Space Between Text and Search",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "searchwidth",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "%",
+        "label": "Search Width",
+        "default": 50
+      },
+      {
+        "type": "range",
+        "id": "searchopacity",
+        "min": 0,
+        "max": 99,
+        "step": 1,
+        "unit": "%",
+        "label": "Search Bar Opacity",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "offsetx",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Box Shadow Offset X",
+        "default": 0.3
+      },
+      {
+        "type": "range",
+        "id": "offsety",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Box Shadow Offset Y",
+        "default": 0.3
+      },
+      {
+        "type": "range",
+        "id": "blur",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Box Shadow Blur",
+        "default": 0.3
+      },
+      {
+        "type": "range",
+        "id": "spread",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "unit": "rem",
+        "label": "Box Shadow Spread",
+        "default": 0.3
+      }
+    ]
+}
+{% endschema %}

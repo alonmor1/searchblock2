@@ -1,0 +1,15 @@
+<div class="searchtext">{{ block.settings.textinput1 }}</div>
+
+{%style%}
+  .searchtext {
+    font-family: {{block.settings.font}} !important;
+    color: {{block.settings.color1}};
+    font-size: {{block.settings.fontsize}}rem;
+    padding-top: {{block.settings.paddingtop}}rem;
+    padding-bottom: {{block.settings.paddingbottom}}rem;
+    padding-left: {{block.settings.paddingleft}}rem;
+    padding-right: {{block.settings.spacing}}rem;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+{%endstyle%}
